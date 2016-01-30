@@ -3,12 +3,12 @@ using Xunit;
 
 namespace Tests
 {
-    public class QuickFindTests
+    public class QuickUnionPathCompressionTests
     {
         [Fact]
         public void IsConnected_NotConnectedByDefault()
         {
-            var algorithm = new QuickFind(2);
+            var algorithm = new QuickUnionPathCompression(2);
 
             Assert.Equal(0, algorithm.Result[0]);
             Assert.Equal(1, algorithm.Result[1]);
@@ -18,7 +18,7 @@ namespace Tests
         [Fact]
         public void IsConnected_TrueForConnected()
         {
-            var algorithm = new QuickFind(10);
+            var algorithm = new QuickUnionPathCompression(10);
 
             algorithm.Union(1, 8);
             algorithm.Union(3, 5);
@@ -32,7 +32,7 @@ namespace Tests
         [Fact]
         public void IsConnected_FalseForNotConnected()
         {
-            var algorithm = new QuickFind(10);
+            var algorithm = new QuickUnionPathCompression(10);
 
             algorithm.Union(1, 8);
             algorithm.Union(3, 5);

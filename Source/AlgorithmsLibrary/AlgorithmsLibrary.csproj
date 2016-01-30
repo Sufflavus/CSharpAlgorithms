@@ -43,6 +43,9 @@
     <Compile Include="InputData\RevertInputData.cs" />
     <Compile Include="QuickFind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickUnionPathCompression.cs" />
+    <Compile Include="QuickUnionWeighted.cs" />
+    <Compile Include="QuickUnion.cs" />
     <Compile Include="ResultData\RevertResultData.cs" />
     <Compile Include="Revert.cs" />
   </ItemGroup>

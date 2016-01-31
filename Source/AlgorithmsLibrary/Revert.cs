@@ -1,27 +1,27 @@
 ﻿using AlgorithmsLibrary.InputData;
-using AlgorithmsLibrary.ResultData;
 
 namespace AlgorithmsLibrary
 {
     public class Revert
     {
-        private readonly int _first;
-        private readonly int _second;
-
         public Revert(RevertInputData inputData)
         {
-            _first = inputData.First;
-            _second = inputData.Second;
+            First = inputData.First;
+            Second = inputData.Second;
         }
 
-        public RevertResultData DoRevert()
+        public int First { get; private set; }
+        public int Second { get; private set; }
+
+        public void DoRevert()
         {
-            var a = _first;
-            var b = _second;
+            var a = First;
+            var b = Second;
             a = a + b;
             b = a - b;
             a = a - b;
-            return new RevertResultData {First = a, Second = b};
+            First = a;
+            Second = b;
         }
     }
 }

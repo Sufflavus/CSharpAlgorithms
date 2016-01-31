@@ -12,10 +12,10 @@ namespace Tests
             var inputData = new RevertInputData {First = 5, Second = 88};
             var algorithm = new Revert(inputData);
 
-            var result = algorithm.DoRevert();
+            algorithm.DoRevert();
 
-            Assert.Equal(inputData.First, result.Second);
-            Assert.Equal(inputData.Second, result.First);
+            Assert.Equal(inputData.First, algorithm.Second);
+            Assert.Equal(inputData.Second, algorithm.First);
         }
 
         [Fact]
@@ -24,11 +24,11 @@ namespace Tests
             var inputData = new RevertInputData {First = 5, Second = 88};
             var algorithm = new Revert(inputData);
 
-            var result = algorithm.DoRevert();
-            result = algorithm.DoRevert();
+            algorithm.DoRevert();
+            algorithm.DoRevert();
 
-            Assert.Equal(inputData.First, result.First);
-            Assert.Equal(inputData.Second, result.Second);
+            Assert.Equal(inputData.First, algorithm.First);
+            Assert.Equal(inputData.Second, algorithm.Second);
         }
     }
 }

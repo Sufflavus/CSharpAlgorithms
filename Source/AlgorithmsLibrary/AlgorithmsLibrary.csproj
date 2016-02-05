@@ -50,6 +50,7 @@
     <Compile Include="QuickUnion.cs" />
     <Compile Include="ResultData\RevertResultData.cs" />
     <Compile Include="Revert.cs" />
+    <Compile Include="Summ.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

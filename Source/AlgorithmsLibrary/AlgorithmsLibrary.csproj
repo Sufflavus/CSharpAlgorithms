@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Division.cs" />
     <Compile Include="InputData\RevertInputData.cs" />
     <Compile Include="Multiplication.cs" />
     <Compile Include="Power.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="QuickUnionPathCompression.cs" />
     <Compile Include="QuickUnionWeighted.cs" />
     <Compile Include="QuickUnion.cs" />
+    <Compile Include="ResultData\DivisionResult.cs" />
     <Compile Include="ResultData\RevertResultData.cs" />
     <Compile Include="Revert.cs" />
     <Compile Include="Summ.cs" />

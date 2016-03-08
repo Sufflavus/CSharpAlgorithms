@@ -53,7 +53,8 @@
     <Compile Include="ResultData\DivisionResult.cs" />
     <Compile Include="ResultData\RevertResultData.cs" />
     <Compile Include="Revert.cs" />
-    <Compile Include="LinkedStackOfStrings.cs" />
+    <Compile Include="Stack\FixedCapacityStackOfStrings.cs" />
+    <Compile Include="Stack\LinkedStackOfStrings.cs" />
     <Compile Include="Summ.cs" />
   </ItemGroup>
   <ItemGroup />

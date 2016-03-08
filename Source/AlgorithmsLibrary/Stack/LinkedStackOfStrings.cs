@@ -1,4 +1,4 @@
-﻿namespace AlgorithmsLibrary
+﻿namespace AlgorithmsLibrary.Stack
 {
     public class LinkedStackOfStrings
     {

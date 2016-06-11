@@ -5,7 +5,7 @@ namespace CodilityTasks
     public static class Lesson5
     {
         /// <summary>
-        /// consecutive totals of the first 0, 1, 2, . . . , n elements of an array
+        /// consecutive totals of the first 0, 1, 2, ... , n elements of an array
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>

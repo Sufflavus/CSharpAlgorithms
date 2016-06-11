@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Lesson2.cs" />
     <Compile Include="Lesson3.cs" />
+    <Compile Include="Lesson4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

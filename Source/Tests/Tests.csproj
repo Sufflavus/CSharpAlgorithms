@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodilityTasks\Lesson10Tests.cs" />
     <Compile Include="CodilityTasks\Lesson9Tests.cs" />
     <Compile Include="CodilityTasks\Lesson8Tests.cs" />
     <Compile Include="CodilityTasks\Lesson7Tests.cs" />

@@ -30,7 +30,7 @@ namespace Tests.CodilityTasks
         [InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 3, 2, 4 })]
         public void SwapSlowSolution_WrongArrays_Throws_ArgumentOutOfRangeException(int[] arrayA, int[] arrayB)
         {
-            Exception ex = Assert.Throws<ArgumentOutOfRangeException>(() => Lesson4.SwapSlowSolution(arrayA, arrayB));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Lesson4.SwapSlowSolution(arrayA, arrayB));
         }
 
         [Theory]
@@ -47,7 +47,7 @@ namespace Tests.CodilityTasks
         [InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 3, 2, 4 }, 5)]
         public void SwapFastSolution_WrongArrays_Throws_ArgumentOutOfRangeException(int[] arrayA, int[] arrayB, int m)
         {
-            Exception ex = Assert.Throws<ArgumentOutOfRangeException>(() => Lesson4.SwapFastSolution(arrayA, arrayB, m));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Lesson4.SwapFastSolution(arrayA, arrayB, m));
         }
     }
 }

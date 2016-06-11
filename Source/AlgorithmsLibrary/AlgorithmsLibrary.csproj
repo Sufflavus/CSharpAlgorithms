@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="Division.cs" />
     <Compile Include="Factorial.cs" />
+    <Compile Include="Fibonacci.cs" />
     <Compile Include="InputData\RevertInputData.cs" />
     <Compile Include="Multiplication.cs" />
+    <Compile Include="Nod.cs" />
     <Compile Include="Power.cs" />
     <Compile Include="QuickFind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="ResultData\DivisionResult.cs" />
     <Compile Include="ResultData\RevertResultData.cs" />
     <Compile Include="Revert.cs" />
+    <Compile Include="Sequence.cs" />
     <Compile Include="Stack\FixedCapacityStackOfStrings.cs" />
     <Compile Include="Stack\LinkedStackOfStrings.cs" />
     <Compile Include="Summ.cs" />

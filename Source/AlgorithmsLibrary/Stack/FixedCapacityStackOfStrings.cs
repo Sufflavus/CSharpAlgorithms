@@ -18,6 +18,12 @@
         public string Pop()
         {
             return _stack[--_n];
+
+            /*
+            // avoid loitering
+            string item = _stack[--_n];
+            _stack[_n] = null;
+            return item;*/
         }
 
         public bool IsEmpty()

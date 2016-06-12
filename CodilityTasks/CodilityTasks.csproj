@@ -45,6 +45,7 @@
     <Compile Include="Lesson12.cs" />
     <Compile Include="Lesson13.cs" />
     <Compile Include="Lesson14.cs" />
+    <Compile Include="Lesson15.cs" />
     <Compile Include="Lesson5.cs" />
     <Compile Include="Lesson2.cs" />
     <Compile Include="Lesson3.cs" />

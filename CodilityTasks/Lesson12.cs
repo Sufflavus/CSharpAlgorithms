@@ -72,5 +72,17 @@ namespace CodilityTasks
 
             return Gcd3(a, b - a, res);
         }
+
+        /// <summary>
+        /// The least common multiple (lcm) of two integers a and b is the smallest positive integer that
+        /// is divisible by both a and b
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int Lcm(int a, int b)
+        {
+            return a*b/Gcd2(a, b);
+        }
     }
 }

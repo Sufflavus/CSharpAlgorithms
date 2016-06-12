@@ -65,6 +65,7 @@
     <Compile Include="CodilityTasks\Lesson13Tests.cs" />
     <Compile Include="CodilityTasks\Lesson12Tests.cs" />
     <Compile Include="CodilityTasks\Lesson11Tests.cs" />
+    <Compile Include="CodilityTasks\Lesson1Tests.cs" />
     <Compile Include="CodilityTasks\Lesson9Tests.cs" />
     <Compile Include="CodilityTasks\Lesson8Tests.cs" />
     <Compile Include="CodilityTasks\Lesson7Tests.cs" />

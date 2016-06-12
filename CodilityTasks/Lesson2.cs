@@ -1,4 +1,6 @@
-﻿namespace CodilityTasks
+﻿using System.Linq;
+
+namespace CodilityTasks
 {
     /// <summary>
     /// Arrays
@@ -36,6 +38,39 @@
                 result[j] = array[i];
             }
             return result;
+        }
+
+        /// <summary>
+        /// A non-empty zero-indexed array A consisting of N integers is given. The array contains an odd number 
+        /// of elements, and each element of the array can be paired with another element that has the same value, 
+        /// except for one element that is left unpaired.
+        /// </summary>
+        /// <param name="array">N is an odd integer within the range [1..1,000,000]
+        /// each element of array A is an integer within the range [1..1,000,000,000];
+        /// all but one of the values in A occur an even number of times.</param>
+        /// <returns></returns>
+        public static int OddOccurrencesInArray(int[] array)
+        {
+            var sortedArray = array.OrderBy(x => x).ToArray();
+            int currentNum = sortedArray[0];
+            int sum = 1;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (sortedArray[i] == currentNum)
+                {
+                    sum++;
+                }
+                else
+                {
+                    if (sum%2 == 1)
+                    {
+                        return currentNum;
+                    }
+                    currentNum = sortedArray[i];
+                    sum = 1;
+                }
+            }
+            return currentNum;
         }
     }
 }

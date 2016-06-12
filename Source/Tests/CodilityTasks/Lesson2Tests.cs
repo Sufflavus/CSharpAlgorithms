@@ -42,5 +42,16 @@ namespace Tests.CodilityTasks
             var result = Lesson2.RotateArray(new int[] { }, 1);
             Assert.Equal(0, result.Length);
         }
+
+        [Theory]
+        [InlineData(new[] { 9, 3, 9, 3, 9, 7, 9 }, 7)]
+        [InlineData(new[] { 9, 9, 3, 3, 3, 9, 9 }, 3)]
+        [InlineData(new[] { 9 }, 9)]
+        
+        public void OddOccurrencesInArray_CorrectResult(int[] input, int expected)
+        {
+            var result = Lesson2.OddOccurrencesInArray(input);
+            Assert.Equal(expected, result);
+        }
     }
 }

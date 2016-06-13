@@ -84,6 +84,58 @@ namespace Tests.CodilityTasks
             Assert.Equal(0, result);
         }
 
+        [Theory]
+        [InlineData(10, 85, 30, 3)]
+        [InlineData(10, 11, 20, 1)]
+        [InlineData(10, 30, 20, 1)]
+        [InlineData(10, 25, 20, 1)]
+        [InlineData(1, 1, 1, 0)]
+        [InlineData(10, 10, 10, 0)]
+        public void FrogJmp_CorrectResult(int x, int y, int d, int expected)
+        {
+            var result = Lesson3.FrogJmp(x, y, d);
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new[] { 3, 1, 2, 4, 3 }, 1)]
+        [InlineData(new[] { -3, -1, -2, -4, -3 }, 1)]
+        [InlineData(new[] { 3, 1 }, 2)]
+        [InlineData(new[] { 0, 0 }, 0)]
+        [InlineData(new[] { 1, 1 }, 0)]
+        [InlineData(new[] { 3000, 1000 }, 2000)]
+        public void TapeEquilibrium_CorrectResult(int[] array, int expected)
+        {
+            var result = Lesson3.TapeEquilibrium(array);
+            Assert.Equal(expected, result);
+        }
+
+
+        [Theory]
+        [InlineData(new[] { 3, 1, 2, 4, 6 }, 5)]
+        [InlineData(new[] { 3, 5, 2, 4, 6 }, 1)]
+        [InlineData(new[] { 3, 5, 2, 4, 1 }, 6)]
+        [InlineData(new[] { 2, 3, 1, 5 }, 4)]
+        [InlineData(new[] { 1, 2 }, 3)]
+        [InlineData(new[] { 2 }, 1)]
+        [InlineData(new[] { 1 }, 2)]
+        [InlineData(new int[] { }, 1)]
+        public void PermMissingElem_CorrectResult(int[] array, int expected)
+        {
+            var result = Lesson3.PermMissingElem(array);
+            Assert.Equal(expected, result);
+        }
+
+        public void PermMissingElem_LargeRange_CorrectResult()
+        {
+            int n = 10000;
+            int[] array = Enumerable.Range(1, n).ToArray();
+
+            var result = Lesson3.PermMissingElem(array);
+             
+            Assert.Equal(n + 1, result);
+        }
+
         private int CountTotal(int n)
         {
             return Enumerable.Range(1, n).Sum(x => x);

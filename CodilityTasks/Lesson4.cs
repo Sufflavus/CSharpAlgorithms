@@ -101,6 +101,84 @@ namespace CodilityTasks
             return false;
         }
 
+        public static int FrogRiverOne(int x, int[] array)
+        {
+            bool[] fellLeaves = new bool[x];
+            int fellLeavesCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                int leaveIndex = array[i] - 1;
+                if (!fellLeaves[leaveIndex])
+                {
+                    fellLeaves[leaveIndex] = true;
+                    fellLeavesCount++;
+                    if (fellLeavesCount == x)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public static int PermCheck(int[] array)
+        {
+            int n = array.Length;
+            var sortedA = array.OrderBy(x => x).ToArray();
+
+            if (sortedA[0] != 1)
+            {
+                return 0;
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                if (sortedA[i] != sortedA[i - 1] + 1)
+                {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+
+        /// <summary>
+        /// given a non-empty zero-indexed array A of N integers, returns the minimal positive integer (greater than 0) 
+        /// that does not occur in A
+        /// </summary>
+        /// <param name="array">N is an integer within the range [1..100,000];
+        /// each element of array A is an integer within the range[−2, 147, 483, 648..2, 147, 483, 647].</param>
+        /// <returns></returns>
+        public static int MissingInteger(int[] array)
+        {
+            int n = array.Length;
+            var sortedA = array.OrderBy(x => x).ToArray();
+
+            if (n == 1)
+            {
+                return sortedA[0] == 1 ? 2 : 1;
+            }
+
+            if (sortedA[0] > 0 && sortedA[0] != 1)
+            {
+                return 1;
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                if (sortedA[i] == sortedA[i - 1] || sortedA[i] <= 0)
+                {
+                    continue;
+                }
+
+                if (sortedA[i] != sortedA[i - 1] + 1 && sortedA[i - 1] + 1 > 0)
+                {
+                    return sortedA[i - 1] + 1;
+                }
+            }
+
+            return sortedA[n - 1] + 1 > 0 ? sortedA[n - 1] + 1 : 1;
+        }
+
         private static Int64 Sum(int[] array)
         {
             return array.Sum(x => (Int64) x);

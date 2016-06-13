@@ -79,5 +79,57 @@ namespace CodilityTasks
             }
             return result;
         }
+
+        public static int PassingCars(int[] array)
+        {
+            int n = array.Length;
+            int[] prefixSums = PrefixSums1(array);
+            int couplesCount = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == 0)
+                {
+                    int rightSum = GetSum(prefixSums, i + 1, n - 1);
+                    couplesCount += rightSum;
+                    if (couplesCount > 1000000000)
+                    {
+                        return -1;
+                    }
+                }
+            }
+            return couplesCount;
+        }
+
+        /// <summary>
+        /// given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K
+        /// </summary>
+        /// <param name="a">A and B are integers within the range [0..2,000,000,000]</param>
+        /// <param name="b">A less_or_equal B</param>
+        /// <param name="k">K is an integer within the range[1..2, 000, 000, 000]</param>
+        /// <returns></returns>
+        public static int CountDiv(int a, int b, int k)
+        {
+            if (a%k == 0 || b%k == 0)
+            {
+                return (b - a)/k + 1;
+            }
+            return b/k - a/k;
+        }
+        
+        private static int[] PrefixSums1(int[] array)
+        {
+            int n = array.Length;
+            int[] p = new int[n + 1];
+            for (int i = 1; i < n + 1; i++)
+            {
+                p[i] = p[i - 1] + array[i - 1];
+            }
+            return p;
+        }
+
+        private static int GetSum(int[] prefixSums, int start, int end)
+        {
+            return prefixSums[end + 1] - prefixSums[start];
+        }
     }
 }

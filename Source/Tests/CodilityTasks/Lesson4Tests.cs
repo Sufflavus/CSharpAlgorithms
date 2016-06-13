@@ -107,6 +107,7 @@ namespace Tests.CodilityTasks
             Assert.Equal(expected, result);
         }
 
+        [Fact]
         public void PermMissingElem_LargeRange_CorrectResult()
         {
             int n = 100;
@@ -120,6 +121,7 @@ namespace Tests.CodilityTasks
             Assert.Equal(n + 1, result);
         }
 
+        [Fact]
         public void PermMissingElem_NegativeLargeRange_CorrectResult()
         {
             int n = 100;

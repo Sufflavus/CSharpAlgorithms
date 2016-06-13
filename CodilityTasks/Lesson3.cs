@@ -83,12 +83,12 @@ namespace CodilityTasks
         public static int TapeEquilibrium(int[] array)
         {
             int n = array.Length;
-            int[] prefixSums = PrefixSums(array);
+            Int64[] prefixSums = Lesson5.PrefixSums(array);
             int minDiff = int.MaxValue;
             for (int i = 1; i < n; i++)
             {
-                int leftSum = GetSum(prefixSums, 0, i - 1);
-                int rightSum = GetSum(prefixSums, i, n - 1);
+                int leftSum = (int)Lesson5.CountTotal(prefixSums, 0, i - 1);
+                int rightSum = (int)Lesson5.CountTotal(prefixSums, i, n - 1);
                 int diff = Math.Abs(leftSum - rightSum);
                 if (diff < minDiff)
                 {
@@ -128,7 +128,7 @@ namespace CodilityTasks
             return n + 1;
         }
 
-        private static int[] PrefixSums(int[] array)
+        /*private static int[] PrefixSums(int[] array)
         {
             int n = array.Length;
             int[] p = new int[n + 1];
@@ -142,6 +142,6 @@ namespace CodilityTasks
         private static int GetSum(int[] prefixSums, int start, int end)
         {
             return prefixSums[end + 1] - prefixSums[start];
-        }
+        }*/
     }
 }

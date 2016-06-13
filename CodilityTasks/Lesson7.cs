@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CodilityTasks
 {
@@ -34,6 +36,42 @@ namespace CodilityTasks
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// Determine whether a given string of parentheses is properly nested.
+        /// given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.
+        /// </summary>
+        /// <param name="s">N is an integer within the range [0..200,000];
+        /// string S consists only of the following characters: "(", "{", "[", "]", "}" and/or ")"</param>
+        /// <returns></returns>
+        public static int Brackets(string S)
+        {
+            int n = S.Length;
+            char[] chars = S.ToCharArray();
+            var stack = new Stack<string>();
+            for (int i = 0; i < n; i++)
+            {
+                string c = chars[i].ToString();
+                if (c == "{" || c == "[" || c == "(")
+                {
+                    stack.Push(c);
+                }
+                else
+                {
+                    if (stack.Count == 0)
+                    {
+                        return 0;
+                    }
+                    string left = stack.Pop();
+                    var pair = left.Insert(1, c);
+                    if (pair != "{}" && pair != "[]" && pair != "()")
+                    {
+                        return 0;
+                    }
+                }
+            }
+            return stack.Count == 0 ? 1 : 0;
         }
     }
 }

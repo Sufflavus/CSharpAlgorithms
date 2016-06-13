@@ -15,5 +15,26 @@ namespace Tests.CodilityTasks
             int result = Lesson7.GroceryStore(array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("{[()()]}", 1)]
+        [InlineData("{[()]}()[]{}(())", 1)]
+        [InlineData("([)()]", 0)]
+        [InlineData("(", 0)]
+        [InlineData("()", 1)]
+        [InlineData("[", 0)]
+        [InlineData("[]", 1)]
+        [InlineData("{", 0)]
+        [InlineData("{}", 1)]
+        [InlineData(")", 0)]
+        [InlineData("]", 0)]
+        [InlineData("}", 0)]
+        [InlineData("[]]]]]]]", 0)]
+        [InlineData("", 1)]
+        public void Brackets_CorrectResult(string s, int expected)
+        {
+            int result = Lesson7.Brackets(s);
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -85,13 +85,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CodilityTasks\CodilityTasks.csproj">
-      <Project>{19cd647e-08d9-43e0-9d2c-0dc849094124}</Project>
-      <Name>CodilityTasks</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AlgorithmsLibrary\AlgorithmsLibrary.csproj">
       <Project>{0E29AA54-5567-4D56-B0F7-96A66B1E3E04}</Project>
       <Name>AlgorithmsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodilityTasks\CodilityTasks.csproj">
+      <Project>{19cd647e-08d9-43e0-9d2c-0dc849094124}</Project>
+      <Name>CodilityTasks</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

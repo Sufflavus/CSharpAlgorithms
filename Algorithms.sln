@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsLibrary", "Source\AlgorithmsLibrary\AlgorithmsLibrary.csproj", "{0E29AA54-5567-4D56-B0F7-96A66B1E3E04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Source\Tests\Tests.csproj", "{92C3613B-95F1-4E82-BC49-6211FD39DBD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodilityTasks", "CodilityTasks\CodilityTasks.csproj", "{19CD647E-08D9-43E0-9D2C-0DC849094124}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodilityTasks", "Source\CodilityTasks\CodilityTasks.csproj", "{19CD647E-08D9-43E0-9D2C-0DC849094124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

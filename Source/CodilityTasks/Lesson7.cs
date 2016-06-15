@@ -38,6 +38,35 @@ namespace CodilityTasks
             return result;
         }
 
+        public static int Fish(int[] a, int[] b)
+        {
+            int n = a.Length;
+            int upstreamAliveFishesCount = 0;
+            var downstreamAliveFishes = new Stack<int>();
+            for (int i = 0; i < n; i++)
+            {
+                if (b[i] == 1)
+                {
+                    downstreamAliveFishes.Push(a[i]);
+                    continue;
+                }
+
+                int upstreamFish = a[i];
+                upstreamAliveFishesCount++;
+                while (downstreamAliveFishes.Count > 0)
+                {
+                    int downstreamFish = downstreamAliveFishes.Pop();
+                    if (downstreamFish > upstreamFish)
+                    {
+                        downstreamAliveFishes.Push(downstreamFish);
+                        upstreamAliveFishesCount--;
+                        break;
+                    }
+                }
+            }
+            return upstreamAliveFishesCount + downstreamAliveFishes.Count;
+        }
+
         /// <summary>
         /// Determine whether a given string of parentheses is properly nested.
         /// given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.
@@ -72,6 +101,29 @@ namespace CodilityTasks
                 }
             }
             return stack.Count == 0 ? 1 : 0;
+        }
+
+        public static int Nesting(string S)
+        {
+            int n = S.Length;
+            int leftCount = 0;
+            for (int i = 0; i < n; i++)
+            {
+                char c = S[i];
+                if (c == '(')
+                {
+                    leftCount++;
+                }
+                else
+                {
+                    if (leftCount == 0)
+                    {
+                        return 0;
+                    }
+                    leftCount--;
+                }
+            }
+            return leftCount == 0 ? 1 : 0;
         }
     }
 }

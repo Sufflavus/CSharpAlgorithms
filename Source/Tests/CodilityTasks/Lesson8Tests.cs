@@ -42,5 +42,21 @@ namespace Tests.CodilityTasks
             int result = Lesson8.GoldenFindLeader(array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new[] { 6, 8, 4, 6, 8, 6, 6 }, 0)]
+        [InlineData(new[] { 4, 3, 4, 4, 4, 2 }, 2)]
+        [InlineData(new[] { -4, 3, -4, -4, -4, 2 }, 2)]
+        [InlineData(new [] { 1 }, 0)]
+        [InlineData(new [] { 0 }, 0)]
+        [InlineData(new [] { 1, 1 }, 1)]
+        [InlineData(new [] { 1, 2 }, 0)]
+        [InlineData(new [] { 1, 1, 1 }, 2)]
+        [InlineData(new [] { 1, 7, 1 }, 0)]
+        public void EquiLeader_CorrectResult(int[] array, int expected)
+        {
+            int result = Lesson8.EquiLeader(array);
+            Assert.Equal(expected, result);
+        }
     }
 }

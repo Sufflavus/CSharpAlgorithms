@@ -122,5 +122,66 @@ namespace CodilityTasks
             }
             return leader;
         }
+
+        /// <summary>
+        /// Find the index S such that the leaders of the sequences A[0], A[1], ..., A[S] and 
+        /// A[S + 1], A[S + 2], ..., A[N - 1] are the same.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static int EquiLeader(int[] array)
+        {
+            int n = array.Length;
+
+            if (n < 2)
+            {
+                return 0;
+            }
+
+            int leader;
+            int[] sortedArray = array.OrderBy(x => x).ToArray();
+            int candidate = sortedArray[n / 2];
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (sortedArray[i] == candidate)
+                {
+                    count++;
+                }
+            }
+            if (count > n/2)
+            {
+                leader = candidate;
+            }
+            else
+            {
+                return 0;
+            }
+
+            int leadersCount = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == leader)
+                {
+                    leadersCount++;
+                }
+            }
+            
+            int equiLeaders = 0;
+            int leftSum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == leader)
+                {
+                    leftSum++;
+                }
+                if (leftSum > (i + 1)/2 && leadersCount - leftSum > (n - i - 1)/2)
+                {
+                    equiLeaders++;
+                }
+            }
+
+            return equiLeaders;
+        }
     }
 }

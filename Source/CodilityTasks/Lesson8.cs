@@ -183,5 +183,51 @@ namespace CodilityTasks
 
             return equiLeaders;
         }
+
+        /// <summary>
+        /// given a zero-indexed array A consisting of N integers, returns index of any element of array A 
+        /// in which the dominator of A occurs. The function should return −1 if array A does not have a dominator.
+        /// </summary>
+        /// <param name="array">N is an integer within the range [0..100,000];
+        /// each element of array A is an integer within the range[−2, 147, 483, 648..2, 147, 483, 647].</param>
+        /// <returns>https://codility.com/demo/results/trainingZ76R43-3DJ/</returns>
+        public static int Dominator(int[] array)
+        {
+            int n = array.Length;
+            if (n == 0)
+            {
+                return -1;
+            }
+
+            int leader;
+            int[] sortedArray = array.OrderBy(x => x).ToArray();
+            int candidate = sortedArray[n / 2];
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (sortedArray[i] == candidate)
+                {
+                    count++;
+                }
+            }
+            if (count > n/2)
+            {
+                leader = candidate;
+            }
+            else
+            {
+                return -1;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == leader)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
     }
 }

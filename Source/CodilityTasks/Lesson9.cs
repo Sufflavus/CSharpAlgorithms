@@ -66,5 +66,75 @@ namespace CodilityTasks
             }
             return maxSlice;
         }
+
+        /// <summary>
+        /// given a zero-indexed array A consisting of N integers containing daily prices of a stock share for a period 
+        /// of N consecutive days, returns the maximum possible profit from one transaction during this period. 
+        /// The function should return 0 if it was impossible to gain any profit.
+        /// </summary>
+        /// <param name="array">N is an integer within the range [0..400,000];
+        /// each element of array A is an integer within the range[0..200, 000].</param>
+        /// <returns>https://codility.com/demo/results/training2RUFKJ-GGS/</returns>
+        public static int MaxProfit(int[] array)
+        {
+            int n = array.Length;
+
+            if (n < 2)
+            {
+                return 0;
+            }
+
+            int minPrice = array[0];
+            int maxOnStep = 0;
+            int maxProfit = 0;
+            for (int i = 1; i < n; i++)
+            {
+                maxOnStep = Math.Max(array[i] - minPrice, 0);
+                minPrice = Math.Min(minPrice, array[i]);
+                maxProfit = Math.Max(maxOnStep, maxProfit);
+            }
+            return maxProfit;
+        }
+
+        /// <summary>
+        /// given a zero-indexed array A consisting of N integers, returns any of its equilibrium indices. 
+        /// The function should return −1 if no equilibrium index exists.
+        /// A zero-indexed array A consisting of N integers is given. An equilibrium index of this array is any integer P such that 0 ≤ P < N and the sum of elements of lower indices is equal to the sum of elements of higher indices, i.e. 
+        /// A[0] + A[1] + ... + A[P−1] = A[P + 1] + ... + A[N−2] + A[N−1].
+        /// Sum of zero elements is assumed to be equal to 0. This can happen if P = 0 or if P = N−1.
+        /// </summary>
+        /// <param name="array">N is an integer within the range [0..100,000];
+        /// each element of array A is an integer within the range[−2, 147, 483, 648..2, 147, 483, 647].</param>
+        /// <returns>https://codility.com/demo/results/demoCMPJKC-7AP/</returns>
+        public static int Equi(int[] array)
+        {
+            int n = array.Length;
+            if (n == 0)
+            {
+                return -1;
+            }
+            Int64[] prefixSums = PrefixSums(array);
+            for (int i = 0; i < n; i++)
+            {
+                Int64 leftSumm = i == 0 ? 0 : prefixSums[i];
+                Int64 rightSumm = i == n - 1 ? 0 : prefixSums[n] - prefixSums[i + 1];
+                if (leftSumm == rightSumm)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private static Int64[] PrefixSums(int[] array)
+        {
+            int n = array.Length;
+            Int64[] p = new Int64[n + 1];
+            for (int k = 1; k < n + 1; k++)
+            {
+                p[k] = p[k - 1] + array[k - 1];
+            }
+            return p;
+        }
     }
 }

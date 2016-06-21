@@ -77,5 +77,14 @@ namespace Tests.CodilityTasks
             int result = Lesson9.Equi(array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new[] { 3, 2, 6, -1, 4, 5, -1, 2 }, 17)]
+        [InlineData(new[] { 3, 2, 6 }, 2)]
+        public void MaxDoubleSliceSum_CorrectResult(int[] array, int expected)
+        {
+            int result = Lesson9.MaxDoubleSliceSum(array);
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -126,6 +126,19 @@ namespace CodilityTasks
             return -1;
         }
 
+        public static int MaxDoubleSliceSum(int[] array)
+        {
+            int n = array.Length;
+            Int64[] prefixSums = Lesson5.PrefixSums(array);
+            int max = int.MinValue;
+
+            for (int i = 1; i < n - 1; i++)
+            {
+                max = (int)Math.Max(max, prefixSums[i - 1] + (prefixSums[n] - prefixSums[i + 1]));
+            }
+            return max;
+        }
+
         private static Int64[] PrefixSums(int[] array)
         {
             int n = array.Length;

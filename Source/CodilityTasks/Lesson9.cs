@@ -129,13 +129,36 @@ namespace CodilityTasks
         public static int MaxDoubleSliceSum(int[] array)
         {
             int n = array.Length;
-            Int64[] prefixSums = Lesson5.PrefixSums(array);
-            int max = int.MinValue;
-
-            for (int i = 1; i < n - 1; i++)
+            if (n == 3)
             {
-                max = (int)Math.Max(max, prefixSums[i - 1] + (prefixSums[n] - prefixSums[i + 1]));
+                return 0;
             }
+            int[] maxLeftSumm = new int[n];
+            int[] maxRightSumm = new int[n];
+
+            // Kadane's algorithm in forward direction
+            for (var i = 1; i < n - 1; i++)
+            {
+                maxLeftSumm[i] = Math.Max(0, maxLeftSumm[i - 1] + array[i]);
+            }
+
+            // Kadane's algorithm in reverse direction
+            for (var i = n - 2; i > 0; i--) 
+            {
+                maxRightSumm[i] = Math.Max(0, maxRightSumm[i + 1] + array[i]);
+            }
+
+            int max = 0;
+
+            for (var i = 1; i < n - 1; i++)
+            {
+                var summ = maxLeftSumm[i - 1] + maxRightSumm[i + 1];
+                if (summ > max)
+                {
+                    max = summ;
+                }
+            }
+           
             return max;
         }
 

@@ -37,5 +37,16 @@ namespace Tests.CodilityTasks
             int result = Lesson10.ReverseCoins(n);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(30, 22)]
+        [InlineData(1, 4)]
+        [InlineData(2, 6)]
+        [InlineData(1000000000, 126500)]
+        public void MinPerimeterRectangle_CorrectResult(int n, int expected)
+        {
+            int result = Lesson10.MinPerimeterRectangle(n);
+            Assert.Equal(expected, result);
+        }
     }
 }

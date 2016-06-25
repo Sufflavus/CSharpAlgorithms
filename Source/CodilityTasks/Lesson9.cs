@@ -126,6 +126,11 @@ namespace CodilityTasks
             return -1;
         }
 
+        /// <summary>
+        /// https://codility.com/demo/results/trainingUTNKV3-9HT/
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
         public static int MaxDoubleSliceSum(int[] array)
         {
             int n = array.Length;

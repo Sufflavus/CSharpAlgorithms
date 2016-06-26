@@ -48,5 +48,17 @@ namespace Tests.CodilityTasks
             int result = Lesson10.MinPerimeterRectangle(n);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(36, 9)]
+        [InlineData(37, 2)]
+        [InlineData(40, 8)]
+        [InlineData(0, 0)]
+        [InlineData(-40, 0)]
+        public void CountFactors_CorrectResult(int n, int expected)
+        {
+            int result = Lesson10.CountFactors(n);
+            Assert.Equal(expected, result);
+        }
     }
 }

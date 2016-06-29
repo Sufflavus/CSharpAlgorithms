@@ -57,7 +57,25 @@ namespace CodilityTasks
         public static int[] CountSemiprimes(int n, int[] p, int[] q)
         {
             bool[] sieve = Sieve(n);
-            int[] counts = new int[n];
+            var semiprimes = new List<int>();
+
+            var i = 2;
+            while (i * i <= n)
+            {
+                if (sieve[i])
+                {
+                    for (int j = i*i; j < n + 1; j++)
+                    {
+                        if (j%i == 0 && sieve[j / i])
+                        {
+                            semiprimes.Add(j);
+                        }
+                    }
+                }
+                i++;
+            }
+
+            int[] counts = new int[n + 1];
 
             counts[0] = 0;
             counts[1] = 0;
@@ -65,27 +83,27 @@ namespace CodilityTasks
             counts[3] = 0;
             counts[4] = 1;
 
-            int m = 2;
+            int m = 1;
 
-            for (int i = 5; i < n; i++)
+            for (int j = 5; j < n + 1; j++)
             {
-                counts[i] = m;
-                if (sieve[i])
+                if (semiprimes.Contains(j))
                 {
                     m++;
                 }
+                counts[j] = m;
             }
 
             var result = new List<int>();
 
-            for (int i = 0; i < q.Length; i++)
+            for (int j = 0; j < q.Length; j++)
             {
-                result.Add(counts[q[i]] - counts[p[i] - 1]);
+                result.Add(counts[q[j]] - counts[p[j] - 1]);
             }
 
             return result.ToArray();
         }
-
+        
         private static int[] ArrayF(int n)
         {
             int[] f = new int[n + 1];

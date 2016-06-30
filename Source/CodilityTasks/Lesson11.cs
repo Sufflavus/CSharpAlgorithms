@@ -56,6 +56,11 @@ namespace CodilityTasks
 
         public static int[] CountSemiprimes(int n, int[] p, int[] q)
         {
+            if (n < 4)
+            {
+                return new [] { 0 };
+            }
+            
             bool[] sieve = Sieve(n);
             var semiprimes = new List<int>();
 

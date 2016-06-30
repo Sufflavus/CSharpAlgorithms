@@ -29,6 +29,12 @@ namespace Tests.CodilityTasks
 
         [Theory]
         [InlineData(26, new [] {1, 4, 16}, new[] { 26, 10, 20 }, new[] { 10, 4, 0 })]
+        [InlineData(1, new [] { 1 }, new[] { 1 }, new[] { 0 })]
+        [InlineData(2, new [] { 1 }, new[] { 2 }, new[] { 0 })]
+        [InlineData(3, new [] { 1 }, new[] { 3 }, new[] { 0 })]
+        [InlineData(4, new [] { 1 }, new[] { 4 }, new[] { 1 })]
+        [InlineData(4, new [] { 1, 2 }, new[] { 4, 3 }, new[] { 1, 0 })]
+        [InlineData(5, new [] { 1, 2 }, new[] { 4, 5 }, new[] { 1, 1 })]
         public void CountSemiprimes_CorrectResult(int n, int[] p, int[] q, int[] expected)
         {
             int[] result = Lesson11.CountSemiprimes(n, p, q);

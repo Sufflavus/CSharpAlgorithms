@@ -84,5 +84,10 @@ namespace CodilityTasks
         {
             return a*b/Gcd2(a, b);
         }
+
+        public static int ChocolatesByNumbers(int n, int m)
+        {
+            return n / Gcd2(n, m);
+        }
     }
 }

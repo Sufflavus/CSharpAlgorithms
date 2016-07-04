@@ -43,5 +43,16 @@ namespace Tests.CodilityTasks
             int result = Lesson12.Lcm(a, b);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(10, 4, 5)]
+        [InlineData(1, 1, 1)]
+        [InlineData(2, 1, 2)]
+        [InlineData(1, 2, 1)]
+        public void ChocolatesByNumbers_CorrectResult(int n, int m, int expected)
+        {
+            int result = Lesson12.ChocolatesByNumbers(n, m);
+            Assert.Equal(expected, result);
+        }
     }
 }

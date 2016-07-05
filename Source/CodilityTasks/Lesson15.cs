@@ -60,7 +60,7 @@ namespace CodilityTasks
 
         public static int AbsDistinct(int[] array)
         {
-            int[] sortedArray = array.Select(x => Math.Abs(x))
+            int[] sortedArray = array.Select(Math.Abs)
                 .OrderBy(x => x)
                 .ToArray();
 

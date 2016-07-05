@@ -24,6 +24,10 @@ namespace Tests.CodilityTasks
 
         [Theory]
         [InlineData(new[] { -5, -3, -1, 0, 3, 6 }, 5)]
+        [InlineData(new[] { -5 }, 1)]
+        [InlineData(new[] { -5, 5 }, 1)]
+        [InlineData(new[] { -5, 1, 5 }, 2)]
+        [InlineData(new[] { -5, -1, 1, 5 }, 2)]
         public void AbsDistinct_CorrectResult(int[] array, int expected)
         {
             int result = Lesson15.AbsDistinct(array);

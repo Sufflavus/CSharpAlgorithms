@@ -21,5 +21,13 @@ namespace Tests.CodilityTasks
             int result = Lesson15.Triangles(array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new[] { -5, -3, -1, 0, 3, 6 }, 5)]
+        public void AbsDistinct_CorrectResult(int[] array, int expected)
+        {
+            int result = Lesson15.AbsDistinct(array);
+            Assert.Equal(expected, result);
+        }
     }
 }

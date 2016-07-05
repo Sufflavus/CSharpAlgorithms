@@ -1,4 +1,7 @@
-﻿namespace CodilityTasks
+﻿using System;
+using System.Linq;
+
+namespace CodilityTasks
 {
     /// <summary>
     /// Caterpillar method
@@ -53,6 +56,24 @@
                 }
             }
             return result;
+        }
+
+        public static int AbsDistinct(int[] array)
+        {
+            int[] sortedArray = array.Select(x => Math.Abs(x))
+                .OrderBy(x => x)
+                .ToArray();
+
+            int count = 1;
+            for (int i = 1; i < sortedArray.Length; i++)
+            {
+                if (sortedArray[i - 1] != sortedArray[i])
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
     }
 }

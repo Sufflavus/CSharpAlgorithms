@@ -33,5 +33,13 @@ namespace Tests.CodilityTasks
             int result = Lesson15.AbsDistinct(array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(6, new[] { 3, 4, 5, 5, 2 }, 9)]
+        public void CountDistinctSlices_CorrectResult(int m, int[] array, int expected)
+        {
+            int result = Lesson15.CountDistinctSlices(m, array);
+            Assert.Equal(expected, result);
+        }
     }
 }

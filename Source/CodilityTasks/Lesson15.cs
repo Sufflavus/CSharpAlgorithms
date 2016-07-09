@@ -75,5 +75,32 @@ namespace CodilityTasks
 
             return count;
         }
+
+        public static int CountDistinctSlices(int m, int[] array)
+        {
+            int n = array.Length;
+            int[] counters = new int[m + 1];
+            int head = 0;
+            int tail = 0;
+            int result = 0;
+            while (tail < n)
+            {
+                while (head < n && counters[array[head]] != 2)
+                {
+                    counters[array[head]]++;
+                    if (counters[array[head]] == 2)
+                        break;
+                    head++;
+                }
+                result += head - tail;
+                if (result > 1000000000)
+                {
+                    return 1000000000;
+                }
+                counters[array[tail]] = 0;
+                tail++;
+            }
+            return result;
+        }
     }
 }

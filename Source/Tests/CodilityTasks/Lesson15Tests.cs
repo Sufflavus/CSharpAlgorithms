@@ -36,6 +36,10 @@ namespace Tests.CodilityTasks
 
         [Theory]
         [InlineData(6, new[] { 3, 4, 5, 5, 2 }, 9)]
+        [InlineData(6, new[] { 3, 4, 5, 5, 2, 3, 5, 6, 6, 1, 2 }, 25)]
+        [InlineData(0, new[] { 0 }, 1)]
+        [InlineData(0, new[] { 0, 0 }, 2)]
+        [InlineData(1, new[] { 0, 1 }, 3)]
         public void CountDistinctSlices_CorrectResult(int m, int[] array, int expected)
         {
             int result = Lesson15.CountDistinctSlices(m, array);

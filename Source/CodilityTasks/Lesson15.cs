@@ -89,7 +89,9 @@ namespace CodilityTasks
                 {
                     counters[array[head]]++;
                     if (counters[array[head]] == 2)
+                    {
                         break;
+                    }
                     head++;
                 }
                 result += head - tail;

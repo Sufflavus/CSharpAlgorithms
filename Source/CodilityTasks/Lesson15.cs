@@ -104,5 +104,28 @@ namespace CodilityTasks
             }
             return result;
         }
+
+        public static int CountTriangles(int[] array)
+        {
+            int n = array.Length;
+            int result = 0;
+
+            var sortedArray = array.OrderBy(x => x).ToArray();
+
+            for (int i = 0; i < n-2; i++)
+            {
+                int j = i + 2;
+                for (int k = i+1; k < n-1; k++)
+                {
+                    while (j < n && sortedArray[i] + sortedArray[k] > sortedArray[j])
+                    {
+                        j++;
+                        result += j - k - 1;
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

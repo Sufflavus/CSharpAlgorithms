@@ -112,10 +112,10 @@ namespace CodilityTasks
 
             var sortedArray = array.OrderBy(x => x).ToArray();
 
-            for (int i = 0; i < n-2; i++)
+            for (int i = 0; i < n - 2; i++)
             {
                 int j = i + 2;
-                for (int k = i+1; k < n-1; k++)
+                for (int k = i + 1; k < n - 1; k++)
                 {
                     while (j < n && sortedArray[i] + sortedArray[k] > sortedArray[j])
                     {

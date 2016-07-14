@@ -45,5 +45,18 @@ namespace Tests.CodilityTasks
             int result = Lesson15.CountDistinctSlices(m, array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new[] { 10, 2, 5, 1, 8, 12 }, 4)]
+        [InlineData(new int[] { }, 0)]
+        [InlineData(new[] { 1 }, 0)]
+        [InlineData(new[] { 1, 2 }, 0)]
+        [InlineData(new[] { 1, 1, 2 }, 0)]
+        [InlineData(new[] { 5, 8, 12 }, 1)]
+        public void CountTriangles_CorrectResult(int[] array, int expected)
+        {
+            int result = Lesson15.CountTriangles(array);
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -28,5 +28,23 @@ namespace CodilityTasks
             }
             return canoes;
         }
+
+        public static int TieRopes(int k, int[] array)
+        {
+            int count = 0;
+            int length = 0;
+
+            for (var i = 0; i < array.Length; i++)
+            {
+                length += array[i];
+                if (length >= k)
+                {
+                    count++;
+                    length = 0;
+                }
+            }
+
+            return count;
+        }
     }
 }

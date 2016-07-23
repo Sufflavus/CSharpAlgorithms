@@ -46,5 +46,34 @@ namespace CodilityTasks
 
             return count;
         }
+
+        public static int MaxNonoverlappingSegments(int[] arrayA, int[] arrayB)
+        {
+            if (arrayA.Length < 2)
+            {
+                return arrayA.Length;
+            }
+
+            int count = 1;
+            int end = arrayB[0];
+            int i = 1;
+            while (i<arrayA.Length)
+            {
+                while (i < arrayA.Length && arrayA[i] < end)
+                {
+                    i++;
+                }
+
+                if (i == arrayA.Length)
+                {
+                    break;
+                }
+
+                count++;
+                end = arrayB[i];
+            }
+
+            return count;
+        }
     }
 }

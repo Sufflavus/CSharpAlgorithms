@@ -21,5 +21,13 @@ namespace Tests.CodilityTasks
             int result = Lesson16.TieRopes(k, array);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(new[] { 1, 3, 7, 9, 9 }, new[] { 5, 6, 8, 9, 10 }, 3)]
+        public void MaxNonoverlappingSegments_CorrectResult(int[] arrayA, int[] arrayB, int expected)
+        {
+            int result = Lesson16.MaxNonoverlappingSegments(arrayA, arrayB);
+            Assert.Equal(expected, result);
+        }
     }
 }
